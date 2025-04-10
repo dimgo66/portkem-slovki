@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Путешествие на Соловки</title>
+    <!-- Фавиконы -->
+    <link rel="icon" href="src/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="src/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/favicon.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="src/favicon-192.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="src/favicon-512.png">
+    <meta name="theme-color" content="#3b82f6">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .hero {
+            background-image: url('src/Panorama-Zima.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(1, 3, 121, 0.3);
+        }
+        .section-header {
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #3b82f6;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #2563eb;
+        }
+        .schedule-table th, .schedule-table td {
+            padding: 0.75rem;
+            text-align: center;
+        }
+        .schedule-table th {
+            background-color: #e5e7eb;
+        }
+        .schedule-table tr:nth-child(even) {
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="hero relative h-96 flex items-center justify-center text-white">
+        <div class="container mx-auto text-center relative z-10">
+            <h1 class="text-5xl font-bold mb-4">Путешествие на Соловки</h1>
+            <p class="text-xl mb-8">Откройте для себя красоту и историю Соловецких островов</p>
+            <a href="#booking" class="btn-primary inline-block">Забронировать билеты</a>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container mx-auto py-12 px-4">
+        <!-- О Соловках -->
+        <section id="about" class="mb-16">
+            <h2 class="text-3xl font-bold section-header">О Соловецких островах</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-lg mb-4">
+                        Соловецкие острова (Соловки) — архипелаг в Белом море на входе в Онежскую губу. Архипелаг состоит из шести крупных и множества мелких островов общей площадью 347 км².
+                    </p>
+                    <p class="text-lg mb-4">
+                        На Соловках расположен историко-культурный комплекс, включающий в себя памятник мирового значения — Соловецкий монастырь (XV век), а также уникальные памятники истории, архитектуры и природы.
+                    </p>
+                    <p class="text-lg">
+                        В 1992 году Соловецкий историко-культурный комплекс был включен в список Всемирного наследия ЮНЕСКО.
+                    </p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Что стоит посетить на Соловках</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Соловецкий Кремль и монастырь (XV век)</li>
+                        <li>Ботанический сад</li>
+                        <li>Секирная гора и храм-маяк</li>
+                        <li>Заяцкие острова с древними лабиринтами</li>
+                        <li>Большая Муксалма с каменной дамбой</li>
+                        <li>Музей истории Соловецкого лагеря</li>
+                        <li>Переговорный камень</li>
+                        <li>Озерно-канальная система монастыря</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Маршруты и теплоходы -->
+        <section id="transport" class="mb-16">
+            <h2 class="text-3xl font-bold section-header">Маршруты и теплоходы</h2>
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h3 class="text-2xl font-semibold mb-4">Маршрут Рабочеостровск — Соловки</h3>
+                <p class="mb-4">
+                    Основной маршрут на Соловки проходит из поселка Рабочеостровск (Кемский район, Республика Карелия), расположенного на побережье Белого моря. Расстояние от Рабочеостровска до Соловков составляет около 55 км по морю, время в пути на теплоходе — около 2 часов.
+                </p>
+                <p class="mb-4">
+                    В навигационный период (с июня по сентябрь) регулярные рейсы выполняются ежедневно.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div class="card bg-blue-50 p-4 rounded-lg">
+                        <div class="h-48 bg-gray-300 mb-4 rounded-lg overflow-hidden">
+                            <img src="src/kosyakov-1.jpg" alt="Теплоход Василий Косяков" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-xl font-semibold mb-2">Теплоход «Василий Косяков»</h4>
+                        <p>Комфортабельный двухпалубный теплоход вместимостью до 160 пассажиров. Во время поездки можно полюбоваться природой, морскими птицами и даже встретить тюленей и белух.</p>
+                    </div>
+                    <div class="card bg-blue-50 p-4 rounded-lg">
+                        <div class="h-48 bg-gray-300 mb-4 rounded-lg overflow-hidden">
+                            <img src="src/4a11d1263803a41bc75a578ce9cbaf72.jpg" alt="Теплоход Метель" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-xl font-semibold mb-2">Теплоход «Метель»</h4>
+                        <p>Небольшое комфортабельное судно, позволяющее в полной мере насладиться красотой окружающих пейзажей Белого моря во время переправы.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Расписание теплоходов -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-2xl font-semibold mb-4">Расписание теплоходов (июнь-август 2025)</h3>
+                <div class="overflow-x-auto">
+                    <table class="schedule-table w-full border-collapse border border-gray-300">
+                        <thead>
+                            <tr>
+                                <th class="border border-gray-300">Маршрут</th>
+                                <th class="border border-gray-300">Время отправления</th>
+                                <th class="border border-gray-300">Время прибытия</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border border-gray-300">Рабочеостровск → Соловки</td>
+                                <td class="border border-gray-300">08:00</td>
+                                <td class="border border-gray-300">10:00</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300">Рабочеостровск → Соловки</td>
+                                <td class="border border-gray-300">12:30</td>
+                                <td class="border border-gray-300">14:30</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300">Соловки → Рабочеостровск</td>
+                                <td class="border border-gray-300">15:30 (16:00)</td>
+                                <td class="border border-gray-300">17:30 (18:00)</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300">Соловки → Рабочеостровск</td>
+                                <td class="border border-gray-300">19:30</td>
+                                <td class="border border-gray-300">21:30</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-4 text-sm text-gray-600">
+                    <p>* Время в пути составляет около 2 часов.</p>
+                    <p>* В период высокого пассажиропотока возможны дополнительные рейсы, информацию уточняйте у менеджеров.</p>
+                    <p>* Отправление рейса Рабочеостровск–Соловки в 12:30 может быть задержано до 13:00 по независящим от перевозчика причинам.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Правила и цены билетов -->
+        <section id="tickets" class="mb-16">
+            <h2 class="text-3xl font-bold section-header">Правила и цены билетов</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4">Стоимость билетов</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-ticket-alt text-blue-500 mt-1 mr-2"></i>
+                                <span><strong>Взрослый билет</strong>: 2800 руб. (в одну сторону)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-ticket-alt text-blue-500 mt-1 mr-2"></i>
+                                <span><strong>Детский билет</strong> (от 3 до 10 лет): 1400 руб. (в одну сторону)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-ticket-alt text-blue-500 mt-1 mr-2"></i>
+                                <span><strong>Дети до 3 лет</strong>: бесплатно</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-ticket-alt text-blue-500 mt-1 mr-2"></i>
+                                <span><strong>Дети от 10 лет</strong>: полная стоимость билета</span>
+                            </li>
+                        </ul>
+
+                        <h3 class="text-2xl font-semibold mt-6 mb-4">Багаж</h3>
+                        <p class="mb-2">
+                            Бесплатная норма провоза багажа: 20 кг
+                        </p>
+                        <p>
+                            Стоимость провоза багажа сверх нормы: за каждые 10 кг перевеса — 10% от стоимости полного взрослого билета.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4">Правила посадки и оформления билетов</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Посадка на теплоход начинается за 30 минут и заканчивается за 5 минут до отправления!</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Для покупки билета необходимо предъявить паспорт, для детей — свидетельство о рождении.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Все забронированные билеты необходимо выкупить до отправления теплохода в кассе туркомплекса «Причал».</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>При отказе от поездки просим отменить бронирование не позднее, чем за сутки до отправления теплохода.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Из-за неблагоприятных погодных условий рейс может быть задержан или отменен.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Проживание -->
+        <section id="accommodation" class="mb-16">
+            <h2 class="text-3xl font-bold section-header">Проживание на Соловках</h2>
+            <p class="text-lg mb-6">
+                На Соловках представлены различные варианты размещения: от гостиниц и гостевых домов до частного сектора. Рекомендуем бронировать жилье заранее, особенно в высокий туристический сезон (июнь-август).
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Гостиница 1 -->
+                <div class="card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-gray-300">
+                        <img src="src/b3d8baf0d89ff2d81f34c11011b42bfc.jpg" alt="Гостиница Соловецкая Слобода" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Гостиница «Соловецкая Слобода»</h3>
+                        <p class="text-gray-600 mb-3">Расположение: 10 минут пешком от Кремля</p>
+                        <ul class="text-sm space-y-1 mb-4">
+                            <li>• 55 номеров, 110 мест</li>
+                            <li>• Ресторан, банкетный зал</li>
+                            <li>• Велопрокат, Wi-Fi</li>
+                            <li>• Транспортные услуги</li>
+                        </ul>
+                        <p class="font-semibold">Адрес: п. Соловецкий, ул. Заозёрная, д. 17а</p>
+                    </div>
+                </div>
+
+                <!-- Гостиница 2 -->
+                <div class="card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-gray-300">
+                        <img src="src/dscn0713.jpg" alt="Соловки Отель" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Гостиница «Соловки Отель»</h3>
+                        <p class="text-gray-600 mb-3">Расположение: 10 минут до Соловецкого монастыря</p>
+                        <ul class="text-sm space-y-1 mb-4">
+                            <li>• Высокий уровень комфорта</li>
+                            <li>• Ресторан «Изба»</li>
+                            <li>• Комплексные обеды и ужины</li>
+                            <li>• Бар, спутниковое ТВ</li>
+                        </ul>
+                        <p class="font-semibold">Адрес: п. Соловецкий, ул. Заозёрная, д. 26</p>
+                    </div>
+                </div>
+
+                <!-- Гостиница 3 -->
+                <div class="card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-gray-300">
+                        <img src="src/3.jpg" alt="Гостиница Приют" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Гостиница «Приют»</h3>
+                        <p class="text-gray-600 mb-3">Расположение: на берегу бухты Благополучия, напротив Соловецкого монастыря</p>
+                        <ul class="text-sm space-y-1 mb-4">
+                            <li>• Уютная гостиница в стиле «кантри»</li>
+                            <li>• Комфортабельные номера</li>
+                            <li>• Первая линия от моря</li>
+                            <li>• Живописные виды на монастырь</li>
+                        </ul>
+                        <p class="font-semibold">Адрес: п. Соловецкий, набережная Бухты Благополучия</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Дополнительные варианты -->
+            <div class="mt-8 bg-blue-50 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4">Дополнительные варианты размещения</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-semibold mb-2">Гостевые дома</h4>
+                        <ul class="space-y-1">
+                            <li>• Гостевой дом «Морошка»</li>
+                            <li>• Гостевой дом «ПинаГор»</li>
+                            <li>• Гостевой дом на ул. Флоренского</li>
+                            <li>• Гостевой дом «Островито Морюшко»</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">Частный сектор</h4>
+                        <p>
+                            В поселке Соловецкий также доступно размещение в частном секторе — квартиры и комнаты в жилых домах. Цены варьируются от 1000 руб. с человека за сутки.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Питание -->
+        <section id="food" class="mb-16">
+            <h2 class="text-3xl font-bold section-header">Питание на Соловках</h2>
+            <p class="text-lg mb-6">
+                На Соловках представлены различные заведения общественного питания, где можно попробовать блюда европейской и поморской кухни, а также местные деликатесы.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Кафе 1 -->
+                <div class="card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-gray-300">
+                        <img src="src/7b5721ab14c9d2999509fd5f1530ed5a.jpg" alt="Кафе Кают-компания" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Кафе «Кают-компания»</h3>
+                        <p class="text-gray-600 mb-3">Расположение: на центральной площади посёлка</p>
+                        <ul class="text-sm space-y-1 mb-4">
+                            <li>• 2 зала</li>
+                            <li>• Обширное меню</li>
+                            <li>• Демократичные цены</li>
+                            <li>• Быстрая подача блюд</li>
+                        </ul>
+                        <p class="font-semibold">Адрес: п. Соловецкий, ул. Заозёрная, д. 4а</p>
+                    </div>
+                </div>
+
+                <!-- Кафе 2 -->
+                <div class="card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-gray-300">
+                        <img src="src/63178f892d3d421ae14e4422fa806c29.jpg" alt="Ресторан Соловецкая Изба" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Ресторан «Соловецкая Изба»</h3>
+                        <p class="text-gray-600 mb-3">Расположение: на территории гостиницы «Соловки Отель»</p>
+                        <ul class="text-sm space-y-1 mb-4">
+                            <li>• Фирменные и традиционные блюда</li>
+                            <li>• Комплексные обеды и ужины</li>
+                            <li>• Бар, спутниковое ТВ</li>
+                            <li>• Предварительный заказ</li>
+                        </ul>
+                        <p class="font-semibold">Адрес: п. Соловецкий, ул. Заозёрная, д. 26</p>
+                    </div>
+                </div>
+
+                <!-- Кафе 3 -->
+                <div class="card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-gray-300">
+                        <img src="src/ee64dca5fb7d0a0a6aca358ccb054de1.jpg" alt="Кафе Старый карбас" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Кафе «Старый карбас»</h3>
+                        <p class="text-gray-600 mb-3">Расположение: 5 минут ходьбы от Кремля</p>
+                        <ul class="text-sm space-y-1 mb-4">
+                            <li>• Блюда европейской и поморской кухни</li>
+                            <li>• Соловецкие деликатесы</li>
+                            <li>• Летняя веранда</li>
+                            <li>• Уютная атмосфера</li>
+                        </ul>
+                        <p class="font-semibold">Адрес: п. Соловецкий, ул. Ковалёва, д. 15</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Дополнительные кафе -->
+            <div class="mt-8 bg-blue-50 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4">Также на Соловках</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-semibold mb-2">Кафе-бар «Варяг»</h4>
+                        <p>
+                            Лучший кофе, выбор напитков, сытные и быстрые закуски, летняя веранда с видом на море и Соловецкий Кремль, спутниковое ТВ.
+                        </p>
+                        <p class="mt-2">
+                            <strong>Адрес:</strong> ул. Северная, напротив причала «Хета»
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">Ресторан «Соловецкая слобода»</h4>
+                        <p>
+                            В цокольном этаже гостиницы «Соловецкая слобода». Предлагает комплексное питание по предварительному заказу, а также блюда и напитки по меню.
+                        </p>
+                        <p class="mt-2">
+                            <strong>Адрес:</strong> п. Соловецкий, ул. Заозёрная, д. 17а
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Форма бронирования -->
+        <section id="booking" class="mb-16">
+            <h2 class="text-3xl font-bold section-header">Забронировать билеты</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <form id="booking-form" action="/submit-form" method="POST">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Личные данные -->
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4">Личные данные</h3>
+                            <div class="mb-4">
+                                <label for="name" class="block mb-1 font-medium">ФИО</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block mb-1 font-medium">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="phone" class="block mb-1 font-medium">Телефон</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" required>
+                            </div>
+                        </div>
+
+                        <!-- Информация о билетах -->
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4">Информация о билетах</h3>
+                            <div class="mb-4">
+                                <label for="date-to" class="block mb-1 font-medium">Дата отправления на Соловки</label>
+                                <input type="date" id="date-to" name="date-to" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="date-from" class="block mb-1 font-medium">Дата отправления с Соловков</label>
+                                <input type="date" id="date-from" name="date-from" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                                <div class="mt-1 text-sm text-gray-500">Оставьте пустым, если билет только в одну сторону</div>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block mb-1 font-medium">Направления</label>
+                                <div class="flex items-center space-x-2 mt-1">
+                                    <input type="checkbox" id="to-solovki" name="directions[]" value="to" class="h-4 w-4 text-blue-500" checked>
+                                    <label for="to-solovki" class="text-sm">Рабочеостровск → Соловки</label>
+                                </div>
+                                <div class="flex items-center space-x-2 mt-1">
+                                    <input type="checkbox" id="from-solovki" name="directions[]" value="from" class="h-4 w-4 text-blue-500" checked>
+                                    <label for="from-solovki" class="text-sm">Соловки → Рабочеостровск</label>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label for="adults" class="block mb-1 font-medium">Взрослых</label>
+                                    <input type="number" id="adults" name="adults" min="0" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="children" class="block mb-1 font-medium">Детей (3-10 лет)</label>
+                                    <input type="number" id="children" name="children" min="0" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                                </div>
+                            </div>
+                            </div>
+                            <div class="mt-4">
+                                <h4 class="text-lg font-semibold">Итоговая стоимость: <span id="total-cost">0</span> руб.</h4>
+                                <p class="text-sm text-gray-600">(Ориентировочная стоимость за билеты туда и обратно)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <label for="comments" class="block mb-1 font-medium">Дополнительные комментарии</label>
+                        <p class="text-sm text-gray-600 mb-2">Обязательно укажите данные всех пассажиров: для взрослых — данные паспорта, для детей — данные свидетельства о рождении.</p>
+                        <textarea id="comments" name="comments" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"></textarea>
+                    </div>
+
+                    <div class="mt-6">
+                        <button type="submit" class="btn-primary">Отправить заявку</button>
+                    </div>
+                    
+                    <!-- Сообщение об отправке/ошибке -->
+                    <div id="form-message" class="mt-4 p-4 rounded-md hidden">
+                        <p id="message-text"></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Полезная информация -->
+        <section id="info" class="mb-16">
+            <h2 class="text-3xl font-bold section-header">Полезная информация</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Что взять с собой</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Таблетки от укачивания (морской болезни)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Теплую одежду и дождевик (погода на Соловках переменчива)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Удобную обувь для длительных пеших прогулок</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Средства от комаров и мошек (летом)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Солнцезащитные средства и головной убор</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Питьевую воду и перекус на дорогу</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Важно знать</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-info-circle text-blue-500 mt-1 mr-2"></i>
+                                <span>Надежными операторами связи на Соловках являются «МегаФон» и МТС</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-info-circle text-blue-500 mt-1 mr-2"></i>
+                                <span>Во время пребывания на острове оставайтесь на связи — в случае штормового предупреждения вас обязательно проинформируют</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-info-circle text-blue-500 mt-1 mr-2"></i>
+                                <span>На островах действует несколько банкоматов Сбербанка, но лучше иметь с собой наличные деньги</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-info-circle text-blue-500 mt-1 mr-2"></i>
+                                <span>Время в пути на теплоходе может увеличиться из-за погодных условий</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-info-circle text-blue-500 mt-1 mr-2"></i>
+                                <span>Лучший сезон для посещения Соловков — с конца июня по середину августа</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Контакты</h3>
+                    <p class="mb-2">Туркомплекс «Причал»</p>
+                    <p class="mb-2">Республика Карелия, Кемский р-н, п. Рабочеостровск, ул. Набережная, д. 1</p>
+                    <p class="mb-2">Телефон: <a href="tel:+78145856060" class="hover:text-blue-300">+7 (81458) 5-60-60</a></p>
+                    <p>Email: <a href="mailto:portkem@yandex.ru" class="hover:text-blue-300">portkem@yandex.ru</a></p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Навигация</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="hover:text-blue-300">О Соловках</a></li>
+                        <li><a href="#transport" class="hover:text-blue-300">Маршруты и теплоходы</a></li>
+                        <li><a href="#tickets" class="hover:text-blue-300">Правила и цены билетов</a></li>
+                        <li><a href="#accommodation" class="hover:text-blue-300">Проживание</a></li>
+                        <li><a href="#food" class="hover:text-blue-300">Питание</a></li>
+                        <li><a href="#booking" class="hover:text-blue-300">Бронирование</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Полезные ссылки</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://www.solovky.ru/" target="_blank" class="hover:text-blue-300">Официальный сайт Соловецкого музея-заповедника</a></li>
+                        <li><a href="https://www.nasolovki.ru/" target="_blank" class="hover:text-blue-300">Туристический информационный центр "Соловки"</a></li>
+                        <li><a href="https://visit-solovki.ru/" target="_blank" class="hover:text-blue-300">О Соловках (туристический портал)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-4 border-t border-gray-700 text-center">
+                <p>© 2025 Путешествие на Соловки. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const adultInput = document.getElementById('adults');
+        const childrenInput = document.getElementById('children');
+        const totalCostElement = document.getElementById('total-cost');
+        const toSolovkiCheckbox = document.getElementById('to-solovki');
+        const fromSolovkiCheckbox = document.getElementById('from-solovki');
+        const dateFromInput = document.getElementById('date-from');
+
+        const adultPrice = 2800;
+        const childPrice = 1400;
+
+        function calculateTotalCost() {
+            const adults = parseInt(adultInput.value) || 0;
+            const children = parseInt(childrenInput.value) || 0;
+            
+            // Проверяем выбранные направления
+            const toSolovki = toSolovkiCheckbox.checked;
+            const fromSolovki = fromSolovkiCheckbox.checked;
+            
+            // Подсчитываем количество направлений
+            let directions = 0;
+            if (toSolovki) directions++;
+            if (fromSolovki) directions++;
+            
+            // Рассчитываем стоимость в зависимости от выбранных направлений
+            const totalCost = ((adults * adultPrice) + (children * childPrice)) * directions;
+
+            totalCostElement.textContent = totalCost.toLocaleString('ru-RU'); // Format for better readability
+        }
+
+        // Обработчик зависимости даты отъезда от чекбокса обратного направления
+        function updateDateFromRequired() {
+            dateFromInput.required = fromSolovkiCheckbox.checked;
+            if (!fromSolovkiCheckbox.checked) {
+                dateFromInput.value = '';
+            }
+        }
+
+        // Связываем направления и даты
+        fromSolovkiCheckbox.addEventListener('change', updateDateFromRequired);
+        toSolovkiCheckbox.addEventListener('change', function() {
+            // Нельзя убрать оба направления
+            if (!this.checked && !fromSolovkiCheckbox.checked) {
+                fromSolovkiCheckbox.checked = true;
+                updateDateFromRequired();
+            }
+            calculateTotalCost();
+        });
+        
+        fromSolovkiCheckbox.addEventListener('change', function() {
+            // Нельзя убрать оба направления
+            if (!this.checked && !toSolovkiCheckbox.checked) {
+                toSolovkiCheckbox.checked = true;
+            }
+            calculateTotalCost();
+        });
+
+        // Calculate on initial load if values are pre-filled
+        calculateTotalCost();
+        updateDateFromRequired();
+
+        // Add event listeners to update cost on input change
+        adultInput.addEventListener('input', calculateTotalCost);
+        childrenInput.addEventListener('input', calculateTotalCost);
+
+        // Обработка отправки формы
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const messageContainer = document.getElementById('form-message');
+            const messageText = document.getElementById('message-text');
+            
+            // Блокируем кнопку отправки
+            const submitButton = this.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Отправка...';
+            
+            // Скрываем предыдущие сообщения
+            messageContainer.classList.add('hidden');
+            
+            // Преобразуем FormData в обычный объект для отправки JSON
+            const formObject = {};
+            formData.forEach((value, key) => {
+                // Если такой ключ уже есть, преобразуем значение в массив
+                if (formObject[key]) {
+                    if (!Array.isArray(formObject[key])) {
+                        formObject[key] = [formObject[key]];
+                    }
+                    formObject[key].push(value);
+                } else {
+                    formObject[key] = value;
+                }
+            });
+            
+            // Отправляем данные на сервер
+            fetch('/submit-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formObject)
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Разблокируем кнопку отправки
+                submitButton.disabled = false;
+                submitButton.textContent = 'Отправить заявку';
+                
+                // Показываем сообщение на странице
+                messageContainer.classList.remove('hidden');
+                
+                if (data.status === 'success') {
+                    messageContainer.classList.remove('bg-red-100', 'text-red-700');
+                    messageContainer.classList.add('bg-green-100', 'text-green-700');
+                    messageText.textContent = data.message;
+                    
+                    // Очищаем форму при успешной отправке
+                    this.reset();
+                    calculateTotalCost(); // Обновляем итоговую стоимость
+                    
+                    // Прокручиваем к сообщению
+                    messageContainer.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    messageContainer.classList.remove('bg-green-100', 'text-green-700');
+                    messageContainer.classList.add('bg-red-100', 'text-red-700');
+                    messageText.textContent = data.message;
+                }
+            })
+            .catch(error => {
+                // Разблокируем кнопку отправки
+                submitButton.disabled = false;
+                submitButton.textContent = 'Отправить заявку';
+                
+                // Показываем сообщение об ошибке
+                messageContainer.classList.remove('hidden', 'bg-green-100', 'text-green-700');
+                messageContainer.classList.add('bg-red-100', 'text-red-700');
+                messageText.textContent = 'Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже.';
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

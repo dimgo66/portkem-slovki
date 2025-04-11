@@ -3,7 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Путешествие на Соловки</title>
+    
+    <!-- SEO мета-теги -->
+    <title>Путешествие на Соловки | Расписание теплоходов и билеты</title>
+    <meta name="description" content="Официальное расписание теплоходов на Соловки из Рабочеостровска. Бронирование билетов онлайн, актуальные цены, информация о маршрутах и теплоходах 'Василий Косяков' и 'Метель'.">
+    <meta name="keywords" content="Соловки, теплоход на Соловки, билеты на Соловки, Рабочеостровск, расписание теплоходов, Соловецкие острова, морской путь на Соловки">
+    
+    <!-- Open Graph мета-теги для соцсетей -->
+    <meta property="og:title" content="Путешествие на Соловки | Расписание теплоходов и билеты">
+    <meta property="og:description" content="Официальное расписание теплоходов на Соловки из Рабочеостровска. Бронирование билетов онлайн, актуальные цены на 2025 год.">
+    <meta property="og:image" content="src/Panorama-Zima.jpg">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card мета-теги -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Путешествие на Соловки | Расписание теплоходов и билеты">
+    <meta name="twitter:description" content="Официальное расписание теплоходов на Соловки из Рабочеостровска. Бронирование билетов онлайн, актуальные цены на 2025 год.">
+    <meta name="twitter:image" content="src/Panorama-Zima.jpg">
+    
+    <!-- Дополнительные мета-теги -->
+    <meta name="author" content="Причал Рабочеостровск">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google" content="notranslate">
+    <link rel="canonical" href="https://portkem.ru/">
+    
     <!-- Фавиконы -->
     <link rel="icon" href="src/favicon.ico">
     <link rel="icon" type="image/svg+xml" href="src/favicon.svg">
@@ -549,6 +573,130 @@
     <!-- Скрипты -->
     <script>
         // Здесь можно добавить дополнительный JavaScript код при необходимости
+    </script>
+
+    <!-- Структурированные данные Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "Причал Рабочеостровск",
+        "description": "Официальные перевозки на Соловецкие острова. Регулярные рейсы теплоходов из Рабочеостровска на Соловки.",
+        "url": "https://portkem.ru/",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Рабочеостровск",
+            "addressRegion": "Республика Карелия",
+            "addressCountry": "RU"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "64.9877",
+            "longitude": "34.7726"
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ],
+            "opens": "10:00",
+            "closes": "17:00"
+        },
+        "telephone": "+7-814-585-60-60",
+        "offers": {
+            "@type": "Offer",
+            "name": "Билет на теплоход Соловки",
+            "price": "2800",
+            "priceCurrency": "RUB",
+            "availability": "https://schema.org/InStock"
+        },
+        "potentialAction": {
+            "@type": "ReserveAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://portkem.ru/#booking",
+                "actionPlatform": [
+                    "http://schema.org/DesktopWebPlatform",
+                    "http://schema.org/MobileWebPlatform"
+                ]
+            },
+            "result": {
+                "@type": "Reservation"
+            }
+        }
+    }
+    </script>
+
+    <!-- Структурированные данные для расписания -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BoatTerminal",
+        "name": "Причал Рабочеостровск",
+        "vehicleSchedule": {
+            "@type": "VehicleSchedule",
+            "scheduleTimings": [
+                {
+                    "@type": "Schedule",
+                    "departureTime": "08:00",
+                    "arrivalTime": "10:00",
+                    "departureLocation": {
+                        "@type": "Place",
+                        "name": "Рабочеостровск"
+                    },
+                    "arrivalLocation": {
+                        "@type": "Place",
+                        "name": "Соловки"
+                    }
+                },
+                {
+                    "@type": "Schedule",
+                    "departureTime": "12:30",
+                    "arrivalTime": "14:30",
+                    "departureLocation": {
+                        "@type": "Place",
+                        "name": "Рабочеостровск"
+                    },
+                    "arrivalLocation": {
+                        "@type": "Place",
+                        "name": "Соловки"
+                    }
+                },
+                {
+                    "@type": "Schedule",
+                    "departureTime": "15:30",
+                    "arrivalTime": "17:30",
+                    "departureLocation": {
+                        "@type": "Place",
+                        "name": "Соловки"
+                    },
+                    "arrivalLocation": {
+                        "@type": "Place",
+                        "name": "Рабочеостровск"
+                    }
+                },
+                {
+                    "@type": "Schedule",
+                    "departureTime": "19:30",
+                    "arrivalTime": "21:30",
+                    "departureLocation": {
+                        "@type": "Place",
+                        "name": "Соловки"
+                    },
+                    "arrivalLocation": {
+                        "@type": "Place",
+                        "name": "Рабочеостровск"
+                    }
+                }
+            ]
+        }
+    }
     </script>
 </body>
 </html>
